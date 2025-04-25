@@ -1,0 +1,99 @@
+/*Basic css boilerPlate settings (font family is optional);*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial;
+}
+
+/*setting flex box and putting the card in center;*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, rgb(233, 62, 62), rgb(254, 178, 35), rgb(58, 29, 251));
+}
+
+/*card settings;*/
+#card {
+    background-color: rgb(63, 59, 59);
+    width: 450px;
+    height: 760px;
+    border: 3px solid rgb(88, 84, 84);
+    border-radius: 20px;
+    box-shadow: 1px 1px 30px black;
+    position: relative;
+    overflow: hidden;
+}
+
+/*we are gonna be using "display:inline-block" instead of flex box because we want side scrolling instead of vertical scrolling;*/
+.stories {
+    border-bottom: 2px solid rgb(81, 77, 77);
+    padding: 15px;
+    white-space: nowrap;
+    /*This prevents wrapping the stories (pushing them on next line);*/
+    overflow-x: auto;
+    /*prevents the overflow of stories to the x-axis (horizontly);*/
+}
+
+.stories::-webkit-scrollbar {
+    display: none;
+    /*hides the horizontal scrollbar below the stories (you can still scroll using your fingers (on phone) or pressing the middle mouse button;*/
+}
+
+.story {
+    height: 90px;
+    width: 90px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 3px solid rgb(118, 118, 118);
+    overflow: hidden;
+    /*hides the overflow of the images inside the stories;*/
+    display: inline-block;
+}
+
+/*optional hovering effects for story;*/
+
+.story:hover {
+    box-shadow: 1px 1px 20px black;
+    transition: .5s;
+}
+
+.story img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.instaLogo img {
+    margin: 20px;
+    height: auto;
+    width: 90%;
+}
+
+.text {
+    color: black;
+    margin: 10px;
+    text-align: center;
+}
+
+.text h2 {
+    color: gray;
+    margin-top: 10px;
+}
+
+#full-screen {
+    display: none;
+    /*would be visibile through JS event;*/
+    height: 95%;
+    width: 95%;
+    left: 11px;
+    top: 15px;
+    border-radius: 15px;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
